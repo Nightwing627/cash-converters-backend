@@ -1,0 +1,31 @@
+{
+  "name": "cashconverter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js && cd client && npm start",
+    "build": "cd client && npm run build"
+  },
+  "engines": {
+    "node": "v18.3.0"
+  },
+  "keywords": [
+    "cashconverter",
+    "cash-converter",
+    "cash",
+    "converter"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.5",
+    "nodemailer-sendgrid-transport": "^0.2.0"
+  }
+}

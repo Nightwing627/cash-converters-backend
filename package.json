@@ -8,9 +8,6 @@
     "dev": "node server/index.js && cd client && npm start",
     "build": "cd client && npm run build"
   },
-  "engines": {
-    "node": "v18.3.0"
-  },
   "keywords": [
     "cashconverter",
     "cash-converter",

@@ -11,7 +11,7 @@ export default function ExpressModal({ open, toggle, title }) {
   const [fields, setFields] = useState({
     title: "Express My Interest In " + title,
   })
-  const [result, setResult] = useState(0)
+
   const [isError, setIsError] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
@@ -30,8 +30,7 @@ export default function ExpressModal({ open, toggle, title }) {
         },
       })
 
-    if (!!isSuccess) {
-      toggle()
+    !!isSuccess &&
       Store.addNotification({
         title: "Success",
         message:
@@ -44,27 +43,11 @@ export default function ExpressModal({ open, toggle, title }) {
           duration: 5000,
         },
       })
-    }
   }, [isError, isSuccess])
-
-  const showMessage = () => {
-    Store.addNotification({
-      title: "Success",
-      message:
-        "Great! Thank you for expressing your interest to work for Cash Converters. Our HR team have received your enquiry.",
-      type: "warning",
-      container: "top-right",
-      animationIn: ["animated", "fadeIn"],
-      animationOut: ["animated", "fadeOut"],
-      dismiss: {
-        duration: 3000,
-      },
-    })
-  }
 
   // ^\w+([\.-_]?\w+)*@\w+([\.-_]?\w+)*(\.\w{2,3})+$  -updated version
   // ^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$   - first version
-  let emailRegExp = RegExp(/^\w+([\.-_]?\w+)*@\w+([\.-_]?\w+)*(\.\w{2,3})+$/)
+  let emailRegExp = RegExp(/^\w+([.-_]?\w+)*@\w+([.-_]?\w+)*(\.\w{2,3})+$/)
   let phoneRegExp = RegExp(/^02[0-2,6-9](\s|-|)\d{3,4}(\s|-|)\d{3,4}$/)
 
   useEffect(() => {
